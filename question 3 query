@@ -1,0 +1,10 @@
+SELECT TOP 5
+    Users.Id,
+    DisplayName,
+    Count(Posts.Id) AS Answers,
+    AVG(CAST(Score AS float)) AS AverageAnswerScore
+FROM Posts
+    INNER JOIN Users ON Users.Id = OwnerUserId
+WHERE (Location LIKE 'Victoria, BC')
+GROUP BY Users.Id, DisplayName
+ORDER BY AverageAnswerScore DESC
