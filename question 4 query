@@ -1,0 +1,11 @@
+SELECT TOP 5
+    Users.Id,
+    DisplayName,
+    Count(Posts.Id) AS Answers,
+    AVG(CAST(Score AS float)) AS AcceptedAnswersId
+FROM Posts
+    INNER JOIN Users ON Users.Id = OwnerUserId
+WHERE (Location LIKE 'Victoria, BC') 
+select name , line,text from Users.Id, where upper-text like 'JAVASCRIPT'
+GROUP BY Users.Id, DisplayName
+ORDER BY AcceptedAnswersId DESC
